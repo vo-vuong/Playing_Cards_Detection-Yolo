@@ -1,11 +1,13 @@
-# Playing Cards Detection using YOLOv5
+# Playing Cards Detection using YOLOv11
 
 ## Introduction
 
-The Playing Cards Detection project using YOLOv5 is a system for identifying and classifying playing cards using the YOLOv5n model.
+The Playing Cards Detection project using YOLOv11 is a system for identifying and classifying playing cards using the YOLOv11 nano model.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/vo-vuong/assets/main/playing_cards_detection-yolo/demo.png" width=300 height=400px><br/>
+  <img src="https://raw.githubusercontent.com/vo-vuong/assets/main/playing_cards_detection-yolo/demo_yolov11_img1.jpg" width=320 height=320 style="display: inline-block; margin-right: 10px;">
+  <img src="https://raw.githubusercontent.com/vo-vuong/assets/main/playing_cards_detection-yolo/demo_yolov11_img3.jpg" width=320 height=320 style="display: inline-block;">
+  <br/>
   <i>playing cards demo</i>
 </p>
 
@@ -30,11 +32,11 @@ cd Playing_Cards_Detection-Yolo
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # For Linux/Mac
-.venv\Scripts\activate  # For Windows
+source .venv/bin/activate   # For Linux/Mac
+.venv\Scripts\activate      # For Windows
 ```
 
-4. Install submodule Yolov5:
+4. Install submodule Yolov11:
 
 ```bash
 git submodule init
@@ -44,33 +46,26 @@ git submodule update
 5. Install the dependencies:
 
 ```bash
-pip install -r yolov5/requirements.txt
+pip install -r requirements.txt
 ```
 
-6. Download the weight file at [best.pt](https://drive.google.com/file/d/14bZfjCO-y1K09V0_QgQcX_fiLjpCz7o5/view?usp=sharing) and move it to the root folder.
 </details>
 
 <details>
 <summary>Inference</summary>
 
-Run inferences on various sources and the results will be saved at `yolov5/runs/detect`.
+Run inferences on finetune model yolov11 nano the results will be saved at `outputs/images`.
 
 ```bash
-python yolov5/detect.py --weights best.pt --hide-conf --source 0                               # webcam
-                                                               img.jpg                         # image
-                                                               vid.mp4                         # video
-                                                               screen                          # screenshot
-                                                               path/                           # directory
-                                                               list.txt                        # list of images
-                                                               list.streams                    # list of streams
-                                                               'path/*.jpg'                    # glob
-                                                               'https://youtu.be/Zgi9g1ksQHc'  # YouTube
-                                                               'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
+python main.py --test_images `path/to/image` --threshold 0.6
+
+Ex:
+python main.py --test_images ./testing_images/img3.jpg --threshold 0.6
 ```
 
 </details>
 
 ## Additional Resources
 
-- [Yolov5](https://github.com/ultralytics/yolov5)
+- [Yolo](https://github.com/ultralytics/ultralytics)
 - [Playing Cards Dataset](https://universe.roboflow.com/augmented-startups/playing-cards-ow27d)
