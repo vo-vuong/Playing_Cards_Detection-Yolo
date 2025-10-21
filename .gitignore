@@ -1,5 +1,26 @@
 # dotenv
 .venv
 
+# vscode config
+.vscode
+
 # dataset folder
-datasets/playing_cards
+datasets/*
+!datasets/.gitkeep
+
+# test data folder
+testing_images/*
+!testing_images/img1.jpg
+!testing_images/img2.jpg
+!testing_images/img3.jpg
+
+# trained models folder
+# trained_models/*
+# !trained_models/.gitkeep
+
+# outputs folder
+outputs/*
+!outputs/.gitkeep
+
+# logs
+runs/*
